@@ -20,6 +20,17 @@
       <div id="mobile-indicator"></div>
       <div id="sm-indicator"></div>
       <header class="header-inner">
+        <div class="header-cart">
+          <div class="header-cart-button"></div>
+          <div class="header-cart-popup">
+            <ul class="header-cart-list">
+              <li>Разработка концепт-арта</li>
+              <li>Графическое оформление концертов, форумов и презентаций</li>
+              <li>TV дизайн  / оформление эфира</li>
+            </ul>
+            <div class="header-cart-btn"><a class="btn btn-3" href="#" data-toggle="modal" data-target="#cartModal">Заказать</a></div>
+          </div>
+        </div>
         <div class="container-fluid">
           <div class="header-content">
             <div class="row">
@@ -385,6 +396,69 @@
                       </div>
                     </div>
                   </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade form-modal cart-modal" id="cartModal" tabindex="-1">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"><img class="svg-inline" src="images/close.svg"></button>
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="container">
+              <div class="cart-modal-wrapper">
+                <div class="cart-modal-l">
+                  <div class="cart-modal-list-wrapper">
+                    <div class="cart-modal-list-ttl">Вы выбрали</div>
+                    <ul class="cart-modal-list">
+                      <li>Разработка концепт-арта</li>
+                      <li>Графическое оформление концертов, форумов и презентаций</li>
+                      <li>TV дизайн  / оформление эфира</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="cart-modal-r">
+                  <div class="modal-header">
+                    <h2>Заказать</h2>
+                  </div>
+                  <div class="modal-body">
+                    <div class="modal-form form-alt">
+                      <form id="cartForm">
+                        <input type="hidden" id="cart_modal_product" name="cart_modal_product">
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="form-group">
+                              <label class="placeholder" for="cart_modal_name">Имя</label>
+                              <input id="cart_modal_name" type="text" name="cart_modal_name" required>
+                            </div>
+                          </div>
+                          <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                              <label class="placeholder" for="cart_modal_phone">Телефон</label>
+                              <input class="input-phone" id="cart_modal_phone" type="text" name="cart_modal_phone" required>
+                            </div>
+                          </div>
+                          <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                              <label class="placeholder" for="cart_modal_email">E-mail</label>
+                              <input id="cart_modal_email" type="email" name="cart_modal_email" required>
+                            </div>
+                          </div>
+                          <div class="col-12 col-lg-6">
+                            <div class="form-footer">
+                              <button class="btn btn-3" type="submit"><span>Отправить</span></button>
+                            </div>
+                          </div>
+                          <div class="col-12 col-lg-6">
+                            <div class="form-agree">
+                              <p>Нажимая кнопку “Отправить” вы принимаете<br><a href="/Magnum-Policy.docx" target="_blank">условия согласия на обработку персональных данных</a></p>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

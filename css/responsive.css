@@ -91,7 +91,11 @@ body {
     font-size: 15px; }
   .btn-4,
   .btn-4:focus {
-    font-size: 18px; } }
+    font-size: 18px; }
+  .cart-modal-list-wrapper {
+    padding-left: 50px; }
+  .cart-modal-r {
+    padding-left: 40px; } }
 
 @media (max-width: 991px) {
   html,
@@ -183,7 +187,10 @@ body {
   .section-order-alt .section-header h2, .section-order-alt .section-header .h2 {
     font-size: 36px; }
   .section-info-inner {
-    margin-top: 153px; } }
+    margin-top: 153px; }
+  .cart-modal-l {
+    flex: 0 0 45%;
+    max-width: 45%; } }
 
 @media (max-width: 767px) {
   body,
@@ -442,4 +449,36 @@ body {
   .pack-tmb {
     padding: 20px 15px; }
   .pack-tmb-sub-ttl {
-    margin-bottom: 15px; } }
+    margin-bottom: 15px; }
+  .cart-modal-l {
+    flex: 0 0 36%;
+    max-width: 36%;
+    padding-right: 10px; }
+  .cart-modal-list-ttl {
+    font-size: 12px;
+    position: relative;
+    transform: none;
+    right: auto;
+    top: auto;
+    margin: 0 0 10px 0;
+    text-align: left; }
+  .cart-modal-list-wrapper {
+    padding: 0;
+    margin-left: -10px; }
+  ul.cart-modal-list {
+    font-size: 10px;
+    line-height: 15px;
+    font-weight: 500;
+    word-break: break-word; }
+  ul.cart-modal-list > li {
+    margin: 0 0 10px 0; }
+  .cart-modal-r {
+    padding-left: 10px;
+    margin-right: -15px; }
+  .cart-modal .form-footer .btn {
+    min-width: 0; }
+  .cart-modal .form-agree {
+    margin: 20px 0 0 0; }
+  .header-cart-button {
+    width: 40px;
+    height: 40px; } }

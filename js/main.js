@@ -6,6 +6,8 @@ $(window).on("scroll touchmove", function() {
 
 	fixedHeader();
 
+	posHeaderCart();
+
 	var scrollPos = $(window).scrollTop();
 
 	$("a[name]").each(function() {
@@ -29,6 +31,8 @@ $(window).resize(function() {
 	fixedHeader();
 
 	$(".slick-slider").slick("setPosition");
+
+	posHeaderCart();
 
 });
 $(window).on("load", function() {
@@ -206,6 +210,24 @@ var mapStyles =[
 ];
 
 $(document).ready(function() {
+
+	$(".header-cart-button").click(function () {
+
+		$(".header-cart-popup").fadeToggle(350).toggleClass("active");
+
+	});
+
+	$("body").on("click", function (e) {
+
+		if (!$(e.target).hasClass("header-cart-button") && !$(e.target).hasClass("header-cart-popup") && !$(e.target).parents().hasClass("header-cart-popup") && $(".header-cart-popup").hasClass("active")) {
+
+			$(".header-cart-popup").fadeOut(350).removeClass("active");
+
+		}
+
+	});
+
+	posHeaderCart();
 
 	$("[data-target='#portModal']").on("click", function () {
 
@@ -1941,5 +1963,13 @@ function setActiveSteps() {
 		}
 
 	});
+
+}
+
+function posHeaderCart() {
+
+	$(".header-cart").css({
+		top: $("header").outerHeight() + 10
+	})
 
 }
