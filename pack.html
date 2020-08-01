@@ -103,7 +103,7 @@
                             <p>до 3 мин.</p>
                           </div>
                         </div>
-                        <div class="pack-tmb-bottom"><a class="btn btn-4" href="#">Заказать</a></div>
+                        <div class="pack-tmb-bottom"><a class="btn btn-4" href="#" data-toggle="modal" data-target="#orderModal">Заказать</a></div>
                       </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
@@ -124,7 +124,7 @@
                             <p>до 3 мин.</p>
                           </div>
                         </div>
-                        <div class="pack-tmb-bottom"><a class="btn btn-4" href="#">Заказать</a></div>
+                        <div class="pack-tmb-bottom"><a class="btn btn-4" href="#" data-toggle="modal" data-target="#orderModal">Заказать</a></div>
                       </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
@@ -149,7 +149,7 @@
                             <p>6 шт. по 15 сек</p>
                           </div>
                         </div>
-                        <div class="pack-tmb-bottom"><a class="btn btn-4" href="#">Заказать</a></div>
+                        <div class="pack-tmb-bottom"><a class="btn btn-4" href="#" data-toggle="modal" data-target="#orderModal">Заказать</a></div>
                       </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
@@ -170,7 +170,7 @@
                             <p>до 3 мин.</p>
                           </div>
                         </div>
-                        <div class="pack-tmb-bottom"><a class="btn btn-4" href="#">Заказать</a></div>
+                        <div class="pack-tmb-bottom"><a class="btn btn-4" href="#" data-toggle="modal" data-target="#orderModal">Заказать</a></div>
                       </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
@@ -191,7 +191,7 @@
                             <p>до 3 мин.</p>
                           </div>
                         </div>
-                        <div class="pack-tmb-bottom"><a class="btn btn-4" href="#">Заказать</a></div>
+                        <div class="pack-tmb-bottom"><a class="btn btn-4" href="#" data-toggle="modal" data-target="#orderModal">Заказать</a></div>
                       </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
@@ -216,7 +216,7 @@
                             <p>6 шт. по 15 сек</p>
                           </div>
                         </div>
-                        <div class="pack-tmb-bottom"><a class="btn btn-4" href="#">Заказать</a></div>
+                        <div class="pack-tmb-bottom"><a class="btn btn-4" href="#" data-toggle="modal" data-target="#orderModal">Заказать</a></div>
                       </div>
                     </div>
                   </div>
@@ -332,6 +332,55 @@
                       <div class="col-12">
                         <div class="form-agree">
                           <p>Нажимая кнопку “Отправить” вы принимаете<br><a href="/Magnum-Policy.docx" target="_blank">условия согласия на обработку персональных данных</a></p>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade form-modal" id="orderModal" tabindex="-1">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"><img class="svg-inline" src="images/close.svg"></button>
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="container">
+              <div class="modal-header">
+                <h2>Заказать</h2>
+              </div>
+              <div class="modal-body">
+                <div class="modal-form form-alt">
+                  <form id="orderForm">
+                    <input type="hidden" id="order_modal_product" name="order_modal_product">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label class="placeholder" for="order_modal_name">Имя</label>
+                          <input id="order_modal_name" type="text" name="order_modal_name" required>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div class="form-group">
+                          <label class="placeholder" for="order_modal_phone">Телефон</label>
+                          <input class="input-phone" id="order_modal_phone" type="text" name="order_modal_phone" required>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                        <div class="form-group">
+                          <label class="placeholder" for="order_modal_email">E-mail</label>
+                          <input id="order_modal_email" type="email" name="order_modal_email" required>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-footer">
+                          <button class="btn btn-3" type="submit"><span>Отправить</span></button>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-agree">
+                          <p>Нажимая кнопку “Отправить” вы принимаете<br><a href="/Magnum-Policy.docx" target="_blank">условия согласия на обработку персональных данных</a>										</p>
                         </div>
                       </div>
                     </div>

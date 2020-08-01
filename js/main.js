@@ -213,6 +213,12 @@ $(document).ready(function() {
 
 	});
 
+	$("[data-target='#orderModal']").on("click", function () {
+
+		$("#order_modal_product").val($(this).closest(".pack-tmb").find("h3").text());
+
+	});
+
 	$('.grid').masonry({
 		itemSelector: '.grid-item'
 	});
@@ -910,7 +916,6 @@ $(document).ready(function() {
 
 			}
 		});
-
 
 	}
 
