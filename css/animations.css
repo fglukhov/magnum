@@ -1,0 +1,21 @@
+@media (max-width: 767px) {
+
+    .service-item-pic-obj-1,
+    .service-item-pic-obj-2,
+    .section-obj,
+    .why-squid-1,
+    .why-squid-2,
+    .why-squid-3,
+    .page-header-home .diver-pic,
+    .school-pic-obj-1,
+    .school-pic-obj-2 {
+        transform: none !important;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+
+
+}
