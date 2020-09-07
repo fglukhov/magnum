@@ -1,21 +1,75 @@
 @media (max-width: 767px) {
 
-    .service-item-pic-obj-1,
-    .service-item-pic-obj-2,
-    .section-obj,
-    .why-squid-1,
-    .why-squid-2,
-    .why-squid-3,
-    .page-header-home .diver-pic,
-    .school-pic-obj-1,
-    .school-pic-obj-2 {
-        transform: none !important;
-    }
+	.section-top-ttl {
+		transform: translateY(0) !important;
+		opacity: 1 !important;
+	}
+
+	.section-top-button {
+		transform: translateY(0) !important;
+		opacity: 1 !important;
+	}
+
+	.info-descr h2,
+	.info-descr p,
+	.info-button {
+		opacity: 1 !important;
+		transform: translateY(0) !important;
+	}
+
+	.section-header {
+		opacity: 1 !important;
+		transform: translateX(0) !important;
+	}
+
 
 }
 
 @media only screen and (min-width: 768px) {
 
+	.section-top-ttl {
+		transform: translateY(50px);
+		opacity: 0;
+	}
+
+	.section-top-button {
+		transform: translateY(50px);
+		opacity: 0;
+	}
+
+	.info-descr h2,
+	.info-descr p,
+	.info-button {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+
+	.section-header {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+
+	.section-info,
+	.port-tmb-pic,
+	.team-tmb-pic {
+		overflow: hidden;
+	}
+
+	.section-info .section-bg {
+		transition: all 4s ease;
+	}
+
+
+	.port-tmb-pic img,
+	.team-tmb-pic img {
+		transition: filter .5s ease, transform 2s ease;
+	}
+
+	.section-info:hover .section-bg,
+	.port-tmb:hover .port-tmb-pic img,
+	.team-tmb:hover .team-tmb-pic img {
+		transform: scale(1.1);
+	}
 
 
 }

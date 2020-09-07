@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Magnum Design</title>
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="icon-16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="icon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="icon-64.png" sizes="64x64">
     <link rel="stylesheet" href="js/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-select.min.css">
     <link rel="stylesheet" href="css/slick.css">
@@ -14,6 +16,8 @@
     <link rel="stylesheet" href="js/pickadate/classic.date.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/add.css">
   </head>
   <body>
     <div class="over-wrapper">
@@ -39,6 +43,7 @@
                 <div class="navbar-wrapper">
                   <div class="container-fluid">
                     <div class="navbar-wrapper-inner">
+                      <div class="navbar-close"></div>
                       <ul class="nav navbar-nav">
                         <li><a href="#packs"><span>Пакетные предложения</span></a></li>
                         <li><a href="#services"><span>Услуги</span></a></li>
@@ -48,21 +53,26 @@
                         <li><a href="#clients"><span>Клиенты</span></a></li>
                         <li><a href="#contacts"><span>Контакты</span></a></li>
                       </ul>
+                      <div class="header-contacts header-contacts-mob">
+                        <div class="header-phone"><a href="tel:+7 (495) 095-10-13">+7 (495) 095-10-13</a></div>
+                        <div class="header-email"><a href="mailto: hello@magnum.design">hello@magnum.design</a></div>
+                      </div>
+                      <div class="header-soclinks header-soclinks-mob"><a class="soclink" href="#" target="_blank"><img src="images/ico-fb.png"></a><a class="soclink" href="#" target="_blank"><img src="images/ico-instagram.png"></a><a class="soclink" href="https://www.youtube.com/channel/UChpHLaICSDPxiX16Et8KJLA" target="_blank"><img src="images/ico-youtube.png"></a></div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="header-col-2">
-                <div class="header-logo"><img src="images/logo.svg" alt="Банкротство"></div>
+                <div class="header-logo"><img src="images/logo.png" alt="Магнум"></div>
               </div>
               <div class="header-col-3">
                 <div class="row">
                   <div class="col">
-                    <div class="header-soclinks"><a class="soclink" href="#"><img src="images/ico-fb.svg"></a><a class="soclink" href="#"><img src="images/ico-instagram.svg"></a><a class="soclink" href="#"><img src="images/ico-vimeo.svg"></a></div>
+                    <div class="header-soclinks"><a class="soclink" href="#" target="_blank"><img src="images/ico-fb.png"></a><a class="soclink" href="#" target="_blank"><img src="images/ico-instagram.png"></a><a class="soclink" href="https://www.youtube.com/channel/UChpHLaICSDPxiX16Et8KJLA" target="_blank"><img src="images/ico-youtube.png"></a></div>
                   </div>
                   <div class="col">
                     <div class="header-contacts">
-                      <div class="header-phone"><a href="tel:+7 (495) 111-11-11">+7 (495) 111-11-11</a></div>
+                      <div class="header-phone"><a href="tel:+7 (495) 095-10-13">+7 (495) 095-10-13</a></div>
                       <div class="header-email"><a href="mailto: hello@magnum.design">hello@magnum.design</a></div>
                     </div>
                   </div>
@@ -267,7 +277,7 @@
                       </div>
                       <div class="col-12">
                         <div class="form-agree">
-                          <p>Нажимая кнопку “Отправить” вы принимаете <a href="/Magnum-Policy.docx" target="_blank">условия согласия на обработку персональных данных</a></p>
+                          <p>Нажимая кнопку “Отправить” вы принимаете <a href="/Magnum-Policy.pdf" target="_blank">условия согласия на обработку персональных данных</a></p>
                         </div>
                       </div>
                     </div>
@@ -293,7 +303,7 @@
                   <div class="contacts-email">
                     <p><a href="mailto: hello@magnum.design">hello@magnum.design</a></p>
                   </div>
-                  <div class="contacts-soclinks"><a class="soclink" href="#"><img src="images/ico-fb.svg"></a><a class="soclink" href="#"><img src="images/ico-instagram.svg"></a><a class="soclink" href="#"><img src="images/ico-vimeo.svg"></a></div>
+                  <div class="contacts-soclinks"><a class="soclink" href="#"><img src="images/ico-fb.png"></a><a class="soclink" href="#"><img src="images/ico-instagram.png"></a><a class="soclink" href="https://www.youtube.com/channel/UChpHLaICSDPxiX16Et8KJLA"><img src="images/ico-youtube.png"></a></div>
                 </div>
                 <div class="contacts-copy">
                   <p>&copy;&nbsp;MAGNUM design. Все права защищены, 2020</p>
@@ -342,7 +352,7 @@
                       </div>
                       <div class="col-12">
                         <div class="form-agree">
-                          <p>Нажимая кнопку “Отправить” вы принимаете<br><a href="/Magnum-Policy.docx" target="_blank">условия согласия на обработку персональных данных</a></p>
+                          <p>Нажимая кнопку “Отправить” вы принимаете<br><a href="/Magnum-Policy.pdf" target="_blank">условия согласия на обработку персональных данных</a></p>
                         </div>
                       </div>
                     </div>
@@ -391,7 +401,7 @@
                       </div>
                       <div class="col-12">
                         <div class="form-agree">
-                          <p>Нажимая кнопку “Отправить” вы принимаете<br><a href="/Magnum-Policy.docx" target="_blank">условия согласия на обработку персональных данных</a>										</p>
+                          <p>Нажимая кнопку “Отправить” вы принимаете<br><a href="/Magnum-Policy.pdf" target="_blank">условия согласия на обработку персональных данных</a></p>
                         </div>
                       </div>
                     </div>
@@ -452,7 +462,7 @@
                           </div>
                           <div class="col-12 col-lg-6">
                             <div class="form-agree">
-                              <p>Нажимая кнопку “Отправить” вы принимаете<br><a href="/Magnum-Policy.docx" target="_blank">условия согласия на обработку персональных данных</a></p>
+                              <p>Нажимая кнопку “Отправить” вы принимаете<br><a href="/Magnum-Policy.pdf" target="_blank">условия согласия на обработку персональных данных</a></p>
                             </div>
                           </div>
                         </div>
@@ -496,16 +506,17 @@
       <script src="js/pickadate/picker.js"></script>
       <script src="js/pickadate/picker.date.js"></script>
       <script src="js/pickadate/pickadate.ru.js"></script>
-      <!--script(src='js/greensock/TweenMax.min.js')-->
-      <!--script(src='js/greensock/plugins/CSSRulePlugin.min.js')-->
-      <!--script(src='js/greensock/plugins/ScrollToPlugin.min.js')-->
-      <!--script(src='js/iscroll-probe.js')-->
-      <!--script(src='js/scrollmagic/ScrollMagic.min.js')-->
-      <!--script(src='js/scrollmagic/plugins/animation.gsap.min.js')-->
-      <!--script(src='js/jquery.mousewheel.js')-->
+      <script src="js/greensock/TweenMax.min.js"></script>
+      <script src="js/greensock/plugins/CSSRulePlugin.min.js"></script>
+      <script src="js/greensock/plugins/ScrollToPlugin.min.js"></script>
+      <script src="js/iscroll-probe.js"></script>
+      <script src="js/scrollmagic/ScrollMagic.min.js"></script>
+      <script src="js/scrollmagic/plugins/animation.gsap.min.js"></script>
+      <script src="js/jquery.mousewheel.js"></script>
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1-MV60BdEKMgEVbl59oSl8UIVbscZmx0"></script>
       <script src="js/bootstrap-fileinput/js/fileinput.min.js"></script>
       <script src="js/main.js"></script>
+      <script src="js/animations.js"></script>
     </div>
   </body>
 </html>

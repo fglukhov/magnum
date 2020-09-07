@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Magnum Design</title>
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="icon-16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="icon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="icon-64.png" sizes="64x64">
     <link rel="stylesheet" href="js/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-select.min.css">
     <link rel="stylesheet" href="css/slick.css">
@@ -14,6 +16,8 @@
     <link rel="stylesheet" href="js/pickadate/classic.date.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/add.css">
   </head>
   <body>
     <div class="over-wrapper">
@@ -39,6 +43,7 @@
                 <div class="navbar-wrapper">
                   <div class="container-fluid">
                     <div class="navbar-wrapper-inner">
+                      <div class="navbar-close"></div>
                       <ul class="nav navbar-nav">
                         <li><a href="#packs"><span>Пакетные предложения</span></a></li>
                         <li><a href="#services"><span>Услуги</span></a></li>
@@ -48,21 +53,26 @@
                         <li><a href="#clients"><span>Клиенты</span></a></li>
                         <li><a href="#contacts"><span>Контакты</span></a></li>
                       </ul>
+                      <div class="header-contacts header-contacts-mob">
+                        <div class="header-phone"><a href="tel:+7 (495) 095-10-13">+7 (495) 095-10-13</a></div>
+                        <div class="header-email"><a href="mailto: hello@magnum.design">hello@magnum.design</a></div>
+                      </div>
+                      <div class="header-soclinks header-soclinks-mob"><a class="soclink" href="#" target="_blank"><img src="images/ico-fb.png"></a><a class="soclink" href="#" target="_blank"><img src="images/ico-instagram.png"></a><a class="soclink" href="https://www.youtube.com/channel/UChpHLaICSDPxiX16Et8KJLA" target="_blank"><img src="images/ico-youtube.png"></a></div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="header-col-2">
-                <div class="header-logo"><img src="images/logo.svg" alt="Банкротство"></div>
+                <div class="header-logo"><img src="images/logo.png" alt="Магнум"></div>
               </div>
               <div class="header-col-3">
                 <div class="row">
                   <div class="col">
-                    <div class="header-soclinks"><a class="soclink" href="#"><img src="images/ico-fb.svg"></a><a class="soclink" href="#"><img src="images/ico-instagram.svg"></a><a class="soclink" href="#"><img src="images/ico-vimeo.svg"></a></div>
+                    <div class="header-soclinks"><a class="soclink" href="#" target="_blank"><img src="images/ico-fb.png"></a><a class="soclink" href="#" target="_blank"><img src="images/ico-instagram.png"></a><a class="soclink" href="https://www.youtube.com/channel/UChpHLaICSDPxiX16Et8KJLA" target="_blank"><img src="images/ico-youtube.png"></a></div>
                   </div>
                   <div class="col">
                     <div class="header-contacts">
-                      <div class="header-phone"><a href="tel:+7 (495) 111-11-11">+7 (495) 111-11-11</a></div>
+                      <div class="header-phone"><a href="tel:+7 (495) 095-10-13">+7 (495) 095-10-13</a></div>
                       <div class="header-email"><a href="mailto: hello@magnum.design">hello@magnum.design</a></div>
                     </div>
                   </div>
@@ -77,15 +87,14 @@
           <!-- Верхний блок-->
           <div class="section section-top">
             <div class="section-content">
+              <div class="section-top-video">
+                <video class="top-video" autoplay loop muted playsinline>
+                  <source src="videos/video.webm" type="video/webm">
+                  <source src="videos/video.mp4" type="video/mp4">
+                </video>
+              </div>
               <div class="container-fluid">
-                <div class="section-top-video">
-                  <video class="top-video" autoplay loop muted playsinline>
-                    <source src="videos/video.webm" type="video/webm">
-                    <source src="videos/video.mp4" type="video/mp4">
-                  </video>
-                </div>
                 <div class="section-top-ttl">
-                  <div class="section-top-ttl-back"><span>Creative videos</span></div>
                   <div class="section-top-ttl-front">
                     <h1>Графический контент 24/7</h1>
                   </div>
@@ -165,226 +174,241 @@
                   <div class="grid">
                     <div class="grid-item">
                       <div class="service-tmb">
-                        <div class="service-tmb-pic"><img src="files/service-1.jpg"></div>
+                        <div class="service-tmb-pic"><img src="files/service-1.jpg">
+                          <div class="service-tmb-text">
+                            <p>Детальная графика</p>
+                            <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
+                          </div>
+                        </div>
                         <div class="service-tmb-descr">
-                          <h3>AR/VR тех­но­логии</h3>
+                          <h3>AR/VR технологии</h3>
                           <div class="service-tmb-button">
                             <div class="btn btn-cart"></div>
                           </div>
-                        </div>
-                        <div class="service-tmb-text">
-                          <p>Детальная графика</p>
-                          <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
                         </div>
                       </div>
                     </div>
                     <div class="grid-item">
                       <div class="service-tmb">
-                        <div class="service-tmb-pic"><img src="files/service-2.jpg"></div>
+                        <div class="service-tmb-pic"><img src="files/service-2.jpg">
+                          <div class="service-tmb-text">
+                            <p>Детальная графика</p>
+                            <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
+                          </div>
+                        </div>
                         <div class="service-tmb-descr">
                           <h3>Видеоотчёты</h3>
                           <div class="service-tmb-button">
                             <div class="btn btn-cart"></div>
                           </div>
                         </div>
-                        <div class="service-tmb-text">
-                          <p>Детальная графика</p>
-                          <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
-                        </div>
                       </div>
                     </div>
                     <div class="grid-item">
                       <div class="service-tmb">
-                        <div class="service-tmb-pic"><img src="files/service-3.jpg"></div>
+                        <div class="service-tmb-pic"><img src="files/service-3.jpg">
+                          <div class="service-tmb-text">
+                            <p>Детальная графика</p>
+                            <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
+                          </div>
+                        </div>
                         <div class="service-tmb-descr">
                           <h3>TV дизайн/оформление эфира</h3>
                           <div class="service-tmb-button">
                             <div class="btn btn-cart"></div>
                           </div>
                         </div>
-                        <div class="service-tmb-text">
-                          <p>Детальная графика</p>
-                          <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
-                        </div>
                       </div>
                     </div>
                     <div class="grid-item">
                       <div class="service-tmb">
-                        <div class="service-tmb-pic"><img src="files/service-4.jpg"></div>
+                        <div class="service-tmb-pic"><img src="files/service-4.jpg">
+                          <div class="service-tmb-text">
+                            <p>Детальная графика</p>
+                            <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
+                          </div>
+                        </div>
                         <div class="service-tmb-descr">
                           <h3>Видеоуроки и видеообзоры</h3>
                           <div class="service-tmb-button">
                             <div class="btn btn-cart"></div>
                           </div>
                         </div>
-                        <div class="service-tmb-text">
-                          <p>Детальная графика</p>
-                          <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
-                        </div>
                       </div>
                     </div>
                     <div class="grid-item">
                       <div class="service-tmb">
-                        <div class="service-tmb-pic"><img src="files/service-5.jpg"></div>
+                        <div class="service-tmb-pic"><img src="files/service-5.jpg">
+                          <div class="service-tmb-text">
+                            <p>Детальная графика</p>
+                            <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
+                          </div>
+                        </div>
                         <div class="service-tmb-descr">
                           <h3>Инфографика</h3>
                           <div class="service-tmb-button">
                             <div class="btn btn-cart"></div>
                           </div>
                         </div>
-                        <div class="service-tmb-text">
-                          <p>Детальная графика</p>
-                          <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
-                        </div>
                       </div>
                     </div>
                     <div class="grid-item">
                       <div class="service-tmb">
-                        <div class="service-tmb-pic"><img src="files/service-6.jpg"></div>
+                        <div class="service-tmb-pic"><img src="files/service-6.jpg">
+                          <div class="service-tmb-text">
+                            <p>Детальная графика</p>
+                            <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
+                          </div>
+                        </div>
                         <div class="service-tmb-descr">
                           <h3>Моушн-дизайн / 2D и 3D композитинг</h3>
                           <div class="service-tmb-button">
                             <div class="btn btn-cart"></div>
                           </div>
                         </div>
-                        <div class="service-tmb-text">
-                          <p>Детальная графика</p>
-                          <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
-                        </div>
                       </div>
                     </div>
                     <div class="grid-item">
                       <div class="service-tmb">
-                        <div class="service-tmb-pic"><img src="files/service-7.jpg"></div>
+                        <div class="service-tmb-pic"><img src="files/service-7.jpg">
+                          <div class="service-tmb-text">
+                            <p>Детальная графика</p>
+                            <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
+                          </div>
+                        </div>
                         <div class="service-tmb-descr">
                           <h3>Компьютерная графика для кино и телесериалов</h3>
                           <div class="service-tmb-button">
                             <div class="btn btn-cart"></div>
                           </div>
                         </div>
-                        <div class="service-tmb-text">
-                          <p>Детальная графика</p>
-                          <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
-                        </div>
                       </div>
                     </div>
                     <div class="grid-item">
                       <div class="service-tmb">
-                        <div class="service-tmb-pic"><img src="files/service-8.jpg"></div>
+                        <div class="service-tmb-pic"><img src="files/service-8.jpg">
+                          <div class="service-tmb-text">
+                            <p>Детальная графика</p>
+                            <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
+                          </div>
+                        </div>
                         <div class="service-tmb-descr">
                           <h3>Музыкальное видео</h3>
                           <div class="service-tmb-button">
                             <div class="btn btn-cart"></div>
                           </div>
                         </div>
-                        <div class="service-tmb-text">
-                          <p>Детальная графика</p>
-                          <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
-                        </div>
                       </div>
                     </div>
                     <div class="grid-item">
                       <div class="service-tmb">
-                        <div class="service-tmb-pic"><img src="files/service-9.jpg"></div>
+                        <div class="service-tmb-pic"><img src="files/service-9.jpg">
+                          <div class="service-tmb-text">
+                            <p>Детальная графика</p>
+                            <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
+                          </div>
+                        </div>
                         <div class="service-tmb-descr">
                           <h3>Корпоративные и имиджевые фильмы</h3>
                           <div class="service-tmb-button">
                             <div class="btn btn-cart"></div>
                           </div>
                         </div>
-                        <div class="service-tmb-text">
-                          <p>Детальная графика</p>
-                          <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
-                        </div>
                       </div>
                     </div>
                     <div class="grid-item">
                       <div class="service-tmb">
-                        <div class="service-tmb-pic"><img src="files/service-10.jpg"></div>
+                        <div class="service-tmb-pic"><img src="files/service-10.jpg">
+                          <div class="service-tmb-text">
+                            <p>Детальная графика</p>
+                            <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
+                          </div>
+                        </div>
                         <div class="service-tmb-descr">
                           <h3>Рекламные ролики</h3>
                           <div class="service-tmb-button">
                             <div class="btn btn-cart"></div>
                           </div>
                         </div>
-                        <div class="service-tmb-text">
-                          <p>Детальная графика</p>
-                          <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
-                        </div>
                       </div>
                     </div>
                     <div class="grid-item">
                       <div class="service-tmb">
-                        <div class="service-tmb-pic"><img src="files/service-11.jpg"></div>
+                        <div class="service-tmb-pic"><img src="files/service-11.jpg">
+                          <div class="service-tmb-text">
+                            <p>Детальная графика</p>
+                            <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
+                          </div>
+                        </div>
                         <div class="service-tmb-descr">
                           <h3>Персонажная анимация</h3>
                           <div class="service-tmb-button">
                             <div class="btn btn-cart"></div>
                           </div>
                         </div>
-                        <div class="service-tmb-text">
-                          <p>Детальная графика</p>
-                          <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
-                        </div>
                       </div>
                     </div>
                     <div class="grid-item">
                       <div class="service-tmb">
-                        <div class="service-tmb-pic"><img src="files/service-12.jpg"></div>
+                        <div class="service-tmb-pic"><img src="files/service-12.jpg">
+                          <div class="service-tmb-text">
+                            <p>Детальная графика</p>
+                            <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
+                          </div>
+                        </div>
                         <div class="service-tmb-descr">
                           <h3>Графический дизайн и превизуализация</h3>
                           <div class="service-tmb-button">
                             <div class="btn btn-cart"></div>
                           </div>
                         </div>
-                        <div class="service-tmb-text">
-                          <p>Детальная графика</p>
-                          <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
-                        </div>
                       </div>
                     </div>
                     <div class="grid-item">
                       <div class="service-tmb">
-                        <div class="service-tmb-pic"><img src="files/service-13.jpg"></div>
+                        <div class="service-tmb-pic"><img src="files/service-13.jpg">
+                          <div class="service-tmb-text">
+                            <p>Детальная графика</p>
+                            <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
+                          </div>
+                        </div>
                         <div class="service-tmb-descr">
                           <h3>Разработка концепт-арта</h3>
                           <div class="service-tmb-button">
                             <div class="btn btn-cart"></div>
                           </div>
                         </div>
-                        <div class="service-tmb-text">
-                          <p>Детальная графика</p>
-                          <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
-                        </div>
                       </div>
                     </div>
                     <div class="grid-item">
                       <div class="service-tmb">
-                        <div class="service-tmb-pic"><img src="files/service-14.jpg"></div>
+                        <div class="service-tmb-pic"><img src="files/service-14.jpg">
+                          <div class="service-tmb-text">
+                            <p>Детальная графика</p>
+                            <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
+                          </div>
+                        </div>
                         <div class="service-tmb-descr">
                           <h3>Графическое оформление концертов, форумов и презентаций</h3>
                           <div class="service-tmb-button">
                             <div class="btn btn-cart"></div>
                           </div>
                         </div>
-                        <div class="service-tmb-text">
-                          <p>Детальная графика</p>
-                          <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
-                        </div>
                       </div>
                     </div>
                     <div class="grid-item">
                       <div class="service-tmb">
-                        <div class="service-tmb-pic"><img src="files/service-15.jpg"></div>
+                        <div class="service-tmb-pic"><img src="files/service-15.jpg">
+                          <div class="service-tmb-text">
+                            <p>Детальная графика</p>
+                            <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
+                          </div>
+                        </div>
                         <div class="service-tmb-descr">
                           <h3>Создание digital контента и продвижение в социальных сетях</h3>
                           <div class="service-tmb-button">
                             <div class="btn btn-cart"></div>
                           </div>
-                        </div>
-                        <div class="service-tmb-text">
-                          <p>Детальная графика</p>
-                          <p>Дизайнерские решения с подробной раскадровкой будущего продукта</p>
                         </div>
                       </div>
                     </div>
@@ -395,7 +419,7 @@
           </div>
           <!-- Услуги	END-->
           <!-- Портфолио-->
-          <div class="section section-port section-alt"><a name="portfolio"></a>
+          <div class="section section-port"><a name="portfolio"></a>
             <div class="section-content">
               <div class="container-fluid">
                 <div class="section-header">
@@ -407,36 +431,48 @@
                   <div class="row">
                     <div class="col">
                       <div class="port-tmb">
-                        <div class="port-tmb-pic"><a href="https://www.youtube.com/watch?v=UChpHLaICSDPxiX16Et8KJLA" data-fancybox><img src="files/port-1.jpg"></a></div>
+                        <div class="port-tmb-pic"><a href="https://www.youtube.com/watch?v=bhrWsh53QjM" data-fancybox><img src="files/port-1.jpg">
+                            <video class="port-video" muted playsinline>
+                              <source src="videos/video-case.webm" type="video/webm">
+                              <source src="videos/video-case.mp4" type="video/mp4">
+                            </video></a></div>
                         <div class="port-tmb-descr">
                           <div class="port-tmb-cat">
                             <p>Графическое оформление шоу</p>
                           </div>
-                          <h3><a href="https://www.youtube.com/watch?v=UChpHLaICSDPxiX16Et8KJLA" data-fancybox>название кейса портфолио</a></h3>
+                          <h3><a href="https://www.youtube.com/watch?v=bhrWsh53QjM" data-fancybox>название кейса портфолио</a></h3>
                           <div class="port-tmb-button"><a class="btn btn-2" href="#" data-toggle="modal" data-target="#portModal">Хочу также</a></div>
                         </div>
                       </div>
                     </div>
                     <div class="col">
                       <div class="port-tmb">
-                        <div class="port-tmb-pic"><a href="https://www.youtube.com/watch?v=UChpHLaICSDPxiX16Et8KJLA" data-fancybox><img src="files/port-1.jpg"></a></div>
+                        <div class="port-tmb-pic"><a href="https://www.youtube.com/watch?v=bhrWsh53QjM" data-fancybox><img src="files/port-1.jpg">
+                            <video class="port-video" muted playsinline>
+                              <source src="videos/video-case.webm" type="video/webm">
+                              <source src="videos/video-case.mp4" type="video/mp4">
+                            </video></a></div>
                         <div class="port-tmb-descr">
                           <div class="port-tmb-cat">
                             <p>Графическое оформление шоу</p>
                           </div>
-                          <h3><a href="https://www.youtube.com/watch?v=UChpHLaICSDPxiX16Et8KJLA" data-fancybox>название кейса портфолио</a></h3>
+                          <h3><a href="https://www.youtube.com/watch?v=bhrWsh53QjM" data-fancybox>название кейса портфолио</a></h3>
                           <div class="port-tmb-button"><a class="btn btn-2" href="#" data-toggle="modal" data-target="#portModal">Хочу также</a></div>
                         </div>
                       </div>
                     </div>
                     <div class="col">
                       <div class="port-tmb">
-                        <div class="port-tmb-pic"><a href="https://www.youtube.com/watch?v=UChpHLaICSDPxiX16Et8KJLA" data-fancybox><img src="files/port-1.jpg"></a></div>
+                        <div class="port-tmb-pic"><a href="https://www.youtube.com/watch?v=bhrWsh53QjM" data-fancybox><img src="files/port-1.jpg">
+                            <video class="port-video" muted playsinline>
+                              <source src="videos/video-case.webm" type="video/webm">
+                              <source src="videos/video-case.mp4" type="video/mp4">
+                            </video></a></div>
                         <div class="port-tmb-descr">
                           <div class="port-tmb-cat">
                             <p>Графическое оформление шоу</p>
                           </div>
-                          <h3><a href="https://www.youtube.com/watch?v=UChpHLaICSDPxiX16Et8KJLA" data-fancybox>название кейса портфолио</a></h3>
+                          <h3><a href="https://www.youtube.com/watch?v=bhrWsh53QjM" data-fancybox>название кейса портфолио</a></h3>
                           <div class="port-tmb-button"><a class="btn btn-2" href="#" data-toggle="modal" data-target="#portModal">Хочу также</a></div>
                         </div>
                       </div>
@@ -448,7 +484,7 @@
           </div>
           <!-- Портфолио	END-->
           <!-- О компании-->
-          <div class="section section-about"><a name="about"></a>
+          <div class="section section-about section-alt"><a name="about"></a>
             <div class="section-content">
               <div class="container-fluid">
                 <div class="section-header">
@@ -463,15 +499,16 @@
                     <h3>Качество</h3>
                     <p>Благодаря профессиональной команде - результат всегда самого высокого уровня</p>
                     <h3>Ответственность</h3>
-                    <p>Наша репутация- залог ответственного отношения к выполнению работы</p>
+                    <p>Наша репутация - залог ответственного отношения к выполнению работы</p>
                     <h3>Стоимость</h3>
                     <p>Оптимизируя затраты, предлагаем конкурентноспособные цены</p>
                     <h3>Актуальность</h3>
-                    <p>Оптимизируя затраты, предлагаем конкурентноспособные цены</p>
+                    <p>Мы всегда в курсе самых свежих тенденций</p>
                     <h3>Сроки</h3>
                     <p>Сотрудничая с нами, Вы получаете результат всегда вовремя</p>
                   </div>
-                  <div class="about-pic"><a href="https://www.youtube.com/watch?v=RilKLOa7WeM" data-fancybox><img src="files/about-pic.jpg"></a></div>
+                  <div class="about-pic"><a class="video" href="https://www.youtube.com/watch?v=RilKLOa7WeM" data-fancybox><img src="files/about-video-poster.jpg">
+                      <div class="play-button"></div></a></div>
                 </div>
               </div>
             </div>
@@ -642,45 +679,52 @@
                 <div class="section-header">
                   <h2>Мы предлагаем комплексные решения за&nbsp;доступные деньги</h2>
                 </div>
-                <div class="order-form form-alt">
-                  <form id="orderForm">
-                    <div class="row">
-                      <div class="col-12 col-sm-4">
-                        <div class="form-group">
-                          <label class="placeholder placeholder" for="order_name">Имя</label>
-                          <input id="order_name" type="text" name="order_name" required>
-                        </div>
-                      </div>
-                      <div class="col-12 col-sm-4">
-                        <div class="form-group">
-                          <label class="placeholder" for="order_phone">Телефон</label>
-                          <input class="input-phone" id="order_phone" type="text" name="order_phone" required>
-                        </div>
-                      </div>
-                      <div class="col-12 col-sm-4">
-                        <div class="form-footer">
-                          <button class="btn btn-3" type="submit"><span>Отправить</span></button>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="form-agree">
-                          <p>Нажимая кнопку “Отправить” вы принимаете <a href="/Magnum-Policy.docx" target="_blank">условия согласия на обработку персональных данных</a></p>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
               </div>
             </div>
           </div>
           <!-- Заявка END-->
           <!-- Контакты-->
           <div class="section section-contacts"><a name="contacts"></a>
-            <div class="contacts-map" id="contactsMap"></div>
             <div class="section-content">
               <div class="container-fluid">
                 <div class="contacts-descr">
-                  <h2>Контакты</h2>
+                  <h2>Написать нам</h2>
+                  <div class="order-form form-alt">
+                    <form id="orderForm">
+                      <div class="row">
+                        <div class="col-12 col-xl-6">
+                          <div class="form-group">
+                            <label class="placeholder placeholder" for="order_name">Имя</label>
+                            <input id="order_name" type="text" name="order_name" required>
+                          </div>
+                        </div>
+                        <div class="col-12 col-xl-6">
+                          <div class="form-group">
+                            <label class="placeholder" for="order_phone">Телефон</label>
+                            <input class="input-phone" id="order_phone" type="text" name="order_phone" required>
+                          </div>
+                        </div>
+                        <div class="col-12 col-xl-6">
+                          <div class="form-footer">
+                            <button class="btn btn-3" type="submit"><span>Отправить</span></button>
+                          </div>
+                        </div>
+                        <div class="col-12 col-xl-6">
+                          <div class="form-agree">
+                            <p>Нажимая кнопку “Отправить” вы принимаете <a href="/Magnum-Policy.pdf" target="_blank">условия согласия на обработку персональных данных</a></p>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="contacts-header">
+                    <div class="contacts-header-l">
+                      <h2>Контакты</h2>
+                    </div>
+                    <div class="contacts-header-r">
+                      <div class="contacts-soclinks"><a class="soclink" href="#" target="_blank"><img src="images/ico-fb.png"></a><a class="soclink" href="#" target="_blank"><img src="images/ico-instagram.png"></a><a class="soclink" href="https://www.youtube.com/channel/UChpHLaICSDPxiX16Et8KJLA" target="_blank"><img src="images/ico-youtube.png"></a></div>
+                    </div>
+                  </div>
                   <div class="contacts-phone">
                     <p><a href="tel: 7 (495) 095 10 13">7 (495) 095 10 13</a></p>
                   </div>
@@ -690,13 +734,13 @@
                   <div class="contacts-email">
                     <p><a href="mailto: hello@magnum.design">hello@magnum.design</a></p>
                   </div>
-                  <div class="contacts-soclinks"><a class="soclink" href="#"><img src="images/ico-fb.svg"></a><a class="soclink" href="#"><img src="images/ico-instagram.svg"></a><a class="soclink" href="#"><img src="images/ico-vimeo.svg"></a></div>
                 </div>
                 <div class="contacts-copy">
                   <p>&copy;&nbsp;MAGNUM design. Все права защищены, 2020</p>
                 </div>
               </div>
             </div>
+            <div class="contacts-map"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6e01963a247358493621e8a2405bd5d6c32c4154133a5d76e6f4dda437da7590&amp;width=100%25&amp;height=720&amp;lang=ru_RU&amp;scroll=true"></script></div>
           </div>
           <!-- Контакты	END-->
         </div>
@@ -739,7 +783,7 @@
                       </div>
                       <div class="col-12">
                         <div class="form-agree">
-                          <p>Нажимая кнопку “Отправить” вы принимаете<br><a href="/Magnum-Policy.docx" target="_blank">условия согласия на обработку персональных данных</a></p>
+                          <p>Нажимая кнопку “Отправить” вы принимаете<br><a href="/Magnum-Policy.pdf" target="_blank">условия согласия на обработку персональных данных</a></p>
                         </div>
                       </div>
                     </div>
@@ -788,7 +832,7 @@
                       </div>
                       <div class="col-12">
                         <div class="form-agree">
-                          <p>Нажимая кнопку “Отправить” вы принимаете<br><a href="/Magnum-Policy.docx" target="_blank">условия согласия на обработку персональных данных</a>										</p>
+                          <p>Нажимая кнопку “Отправить” вы принимаете<br><a href="/Magnum-Policy.pdf" target="_blank">условия согласия на обработку персональных данных</a></p>
                         </div>
                       </div>
                     </div>
@@ -849,7 +893,7 @@
                           </div>
                           <div class="col-12 col-lg-6">
                             <div class="form-agree">
-                              <p>Нажимая кнопку “Отправить” вы принимаете<br><a href="/Magnum-Policy.docx" target="_blank">условия согласия на обработку персональных данных</a></p>
+                              <p>Нажимая кнопку “Отправить” вы принимаете<br><a href="/Magnum-Policy.pdf" target="_blank">условия согласия на обработку персональных данных</a></p>
                             </div>
                           </div>
                         </div>
@@ -893,16 +937,17 @@
       <script src="js/pickadate/picker.js"></script>
       <script src="js/pickadate/picker.date.js"></script>
       <script src="js/pickadate/pickadate.ru.js"></script>
-      <!--script(src='js/greensock/TweenMax.min.js')-->
-      <!--script(src='js/greensock/plugins/CSSRulePlugin.min.js')-->
-      <!--script(src='js/greensock/plugins/ScrollToPlugin.min.js')-->
-      <!--script(src='js/iscroll-probe.js')-->
-      <!--script(src='js/scrollmagic/ScrollMagic.min.js')-->
-      <!--script(src='js/scrollmagic/plugins/animation.gsap.min.js')-->
-      <!--script(src='js/jquery.mousewheel.js')-->
+      <script src="js/greensock/TweenMax.min.js"></script>
+      <script src="js/greensock/plugins/CSSRulePlugin.min.js"></script>
+      <script src="js/greensock/plugins/ScrollToPlugin.min.js"></script>
+      <script src="js/iscroll-probe.js"></script>
+      <script src="js/scrollmagic/ScrollMagic.min.js"></script>
+      <script src="js/scrollmagic/plugins/animation.gsap.min.js"></script>
+      <script src="js/jquery.mousewheel.js"></script>
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1-MV60BdEKMgEVbl59oSl8UIVbscZmx0"></script>
       <script src="js/bootstrap-fileinput/js/fileinput.min.js"></script>
       <script src="js/main.js"></script>
+      <script src="js/animations.js"></script>
     </div>
   </body>
 </html>

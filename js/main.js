@@ -37,185 +37,42 @@ $(window).resize(function() {
 });
 $(window).on("load", function() {
 	//makeUp();
+
+	$(window).trigger("resize");
+
 });
 var baseUrl = "";
 
 
-var mapStyles =[
-	{
-		"featureType": "all",
-		"elementType": "labels.text.fill",
-		"stylers": [
-			{
-				"saturation": 36
-			},
-			{
-				"color": "#000000"
-			},
-			{
-				"lightness": 40
-			}
-		]
-	},
-	{
-		"featureType": "all",
-		"elementType": "labels.text.stroke",
-		"stylers": [
-			{
-				"visibility": "on"
-			},
-			{
-				"color": "#000000"
-			},
-			{
-				"lightness": 16
-			}
-		]
-	},
-	{
-		"featureType": "all",
-		"elementType": "labels.icon",
-		"stylers": [
-			{
-				"visibility": "off"
-			}
-		]
-	},
-	{
-		"featureType": "administrative",
-		"elementType": "geometry.fill",
-		"stylers": [
-			{
-				"color": "#000000"
-			},
-			{
-				"lightness": 20
-			}
-		]
-	},
-	{
-		"featureType": "administrative",
-		"elementType": "geometry.stroke",
-		"stylers": [
-			{
-				"color": "#000000"
-			},
-			{
-				"lightness": 17
-			},
-			{
-				"weight": 1.2
-			}
-		]
-	},
-	{
-		"featureType": "landscape",
-		"elementType": "geometry",
-		"stylers": [
-			{
-				"color": "#000000"
-			},
-			{
-				"lightness": 20
-			}
-		]
-	},
-	{
-		"featureType": "poi",
-		"elementType": "geometry",
-		"stylers": [
-			{
-				"color": "#000000"
-			},
-			{
-				"lightness": 21
-			}
-		]
-	},
-	{
-		"featureType": "road.highway",
-		"elementType": "geometry.fill",
-		"stylers": [
-			{
-				"color": "#000000"
-			},
-			{
-				"lightness": 17
-			}
-		]
-	},
-	{
-		"featureType": "road.highway",
-		"elementType": "geometry.stroke",
-		"stylers": [
-			{
-				"color": "#000000"
-			},
-			{
-				"lightness": 29
-			},
-			{
-				"weight": 0.2
-			}
-		]
-	},
-	{
-		"featureType": "road.arterial",
-		"elementType": "geometry",
-		"stylers": [
-			{
-				"color": "#000000"
-			},
-			{
-				"lightness": 18
-			}
-		]
-	},
-	{
-		"featureType": "road.local",
-		"elementType": "geometry",
-		"stylers": [
-			{
-				"color": "#000000"
-			},
-			{
-				"lightness": 16
-			}
-		]
-	},
-	{
-		"featureType": "transit",
-		"elementType": "geometry",
-		"stylers": [
-			{
-				"color": "#000000"
-			},
-			{
-				"lightness": 19
-			}
-		]
-	},
-	{
-		"featureType": "water",
-		"elementType": "geometry",
-		"stylers": [
-			{
-				"color": "#000000"
-			},
-			{
-				"lightness": 17
-			}
-		]
-	}
-];
+
 
 $(document).ready(function() {
 
-	$(".header-cart-button").click(function () {
+	$(".port-video").on("mouseover", function () {
 
-		$(".header-cart-popup").fadeToggle(350).toggleClass("active");
+		$(this).css({
+			opacity: 1
+		});
+
+		$(this).get(0).play();
 
 	});
+
+	$(".port-video").on("mouseout", function () {
+
+		$(this).css({
+			opacity: 0
+		});
+
+		$(this).get(0).pause();
+
+	});
+
+// 	$(".header-cart-button").click(function () {
+
+// 		$(".header-cart-popup").fadeToggle(350).toggleClass("active");
+
+// 	});
 
 	$("body").on("click", function (e) {
 
@@ -895,54 +752,6 @@ $(document).ready(function() {
 
 	});
 
-	// Contacts map
-
-
-	if ($("#contactsMap").length) {
-
-		var image = 'images/map-pin.svg',
-			pinLat = 55.783703,
-			pinLng = 37.579689;
-
-		center = {
-			lat: pinLat,
-			lng: pinLng
-		}
-
-		var mapOptions = {
-			center: center,
-			zoom: 16,
-			scrollwheel:false,
-			styles: mapStyles
-		};
-
-
-		var map = new google.maps.Map(document.getElementById('contactsMap'),
-			mapOptions);
-
-		var marker = new google.maps.Marker({
-			position: center,
-			map: map,
-			icon: image
-		});
-
-		google.maps.event.addDomListener(window, 'resize', function() {
-			map.setCenter(center);
-			if (!$("#mobile-indicator").css("display") == "block") {
-
-				//map.setCenter({lat: 55.703703, lng: 37.570689});
-
-			} else {
-
-
-
-			}
-		});
-
-	}
-
-	// Contacts map END
-
 	$('.svg-inline').each(function() {
 		var $img = jQuery(this);
 		var imgID = $img.attr('id');
@@ -1009,11 +818,30 @@ $(document).ready(function() {
 		$(".navbar-wrapper").fadeToggle(150);
 		$("body").toggleClass("menu-open");
 	});
-	$(".navbar-wrapper .close, .navbar-nav a").click(function() {
+	$(".navbar-wrapper .navbar-close, .navbar-nav a").click(function() {
 		$(".navbar-wrapper").fadeOut(150);
 		$("body").removeClass("menu-open");
 		$(".navbar-trigger").removeClass("active");
 	});
+
+	$("body").on("click", function(e) {
+
+		if ($(".navbar-trigger").hasClass("active")) {
+
+			if (!$(e.target).hasClass("navbar-wrapper") && !$(e.target).parents().hasClass("navbar-wrapper") && !$(e.target).hasClass("navbar-trigger") && !$(e.target).parents().hasClass("navbar-trigger")) {
+
+				$(".navbar-wrapper").fadeOut(150);
+				$("body").removeClass("menu-open");
+				$(".navbar-trigger").removeClass("active");
+
+			}
+
+		}
+
+
+
+	});
+
 	$(".navbar-wrapper").click(function(e) {
 		if (!$(e.target).hasClass("navbar-wrapper-inner") && !$(e.target).parents().hasClass("navbar-wrapper-inner")) {
 			$(".navbar-wrapper").fadeOut(150);
@@ -1339,7 +1167,7 @@ function validateForms() {
 					type: "POST",
 					data: $(form).serialize(),
 					success: function () {
-						//formSuccess(form);
+						formSuccess(form);
 					}
 				});
 				return false;
@@ -1973,3 +1801,122 @@ function posHeaderCart() {
 	})
 
 }
+
+// Cart
+$(function () {
+    let Cart = function () {
+        this.data = getData();
+        
+        this.add = function (item) {
+            if (this.data[item.id]) {
+                return;
+            } else {
+                this.data[item.id] = item.title;
+                this.save();
+            }
+        };
+        this.remove = function (item) {
+            delete(this.data[item]);
+            this.save();
+        }
+        this.save = function () {
+            sessionStorage.setItem('cart', JSON.stringify(this.data));
+            this.onSave();
+        };
+        this.clear = function () {
+            this.data = {};
+            this.save();
+        };
+        this.count = function () {
+            return Object.keys(this.data).length;
+        };
+        this.onSave = function() {};
+        this.onInit = function() {};
+        
+        function getData () {
+            const data = sessionStorage.getItem('cart');
+            if (data && Object.keys(data).length) {
+                return JSON.parse(data);
+            }
+            return {};
+        };
+    }
+    let cart = new Cart();
+    cart.onSave = function() {
+        updateOrderList();
+        if (cart.count()) {
+            $('.header-cart').addClass('show');
+        } else {
+            $('.header-cart').removeClass('show');
+        }
+    };
+    updateOrderList();
+    
+    if (cart.count()) {
+        $('.header-cart').addClass('show');
+    }
+    
+    function updateOrderList () {
+        let list = '';
+        let val_list = '';
+        for(let idx in cart.data) {
+            let item = '<li><button type="button" title="Удалить из корзины" data-action="remove-from-cart" data-id="' + idx + '"></button>' + cart.data[idx] + '</li>';
+            list += item;
+            val_list += (idx + ': ' + cart.data[idx] + ';\n');
+        }
+        $('#cartModalList, .header-cart-list').html(list);
+        $('#cart_modal_product').val(val_list);
+    }
+
+    $('[data-action="add-to-cart"]').click(function () {
+        let $item = $(this);
+        let data = {};
+        data.id = $item.data('id');
+        data.title = $item.closest('.service-tmb-descr').find('h3').text();
+        cart.add(data);
+        
+        showOrderPopup();
+    });
+    $(document).on('click', '[data-action="remove-from-cart"]', function () {
+       cart.remove($(this).data('id'));
+    });
+    
+    $('#cartForm').submit(function (e) {
+        cart.clear();
+    });
+    
+    const showOrderPopup = debounce(function () {
+            $('.header-cart-popup').fadeToggle(350);
+            setTimeout(function() { $('.header-cart-popup').fadeToggle(350); }, 3000);
+        },
+        3000,
+        1
+    );
+    
+    function debounce(func, wait, immediate) {
+      let timeout;
+    
+      return function executedFunction() {
+        const context = this;
+        const args = arguments;
+    
+        const later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+    
+        const callNow = immediate && !timeout;
+    
+        clearTimeout(timeout);
+    
+        timeout = setTimeout(later, wait);
+    
+        if (callNow) func.apply(context, args);
+      };
+    };
+    
+    // Pack
+    $('[data-pack-product]').click(function() {
+        $('#port-product').val($(this).data('pack-product'));
+    });
+});

@@ -2,7 +2,7 @@
 
 $headers  = 'MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-$headers .= 'From: info@bankrot123123.ru' . "\r\n";
+$headers .= 'From: hello@magnum.design' . "\r\n";
 
 $body = '
 
@@ -200,7 +200,7 @@ if ($_POST['email']) {
 */
 // Отправка письма администратору
 
-mail('f.glukhov@gmail.com', $_POST['subject'], $body, $headers);
+mail('hello@magnum.design', $_POST['subject'], $body, $headers);
 
 //echo $body;
 
