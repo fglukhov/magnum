@@ -6,7 +6,7 @@ $(window).on("scroll touchmove", function() {
 
 	fixedHeader();
 
-	posHeaderCart();
+	//posHeaderCart();
 
 	var scrollPos = $(window).scrollTop();
 
@@ -32,11 +32,17 @@ $(window).resize(function() {
 
 	$(".slick-slider").slick("setPosition");
 
-	posHeaderCart();
+	//posHeaderCart();
+
+	makeUp();
 
 });
 $(window).on("load", function() {
-	//makeUp();
+	makeUp();
+
+	$('.grid').masonry({
+		itemSelector: '.grid-item'
+	});
 
 	$(window).trigger("resize");
 
@@ -47,6 +53,8 @@ var baseUrl = "";
 
 
 $(document).ready(function() {
+
+	makeUp();
 
 	$(".port-video").on("mouseover", function () {
 
@@ -84,7 +92,7 @@ $(document).ready(function() {
 
 	});
 
-	posHeaderCart();
+	//posHeaderCart();
 
 	$("[data-target='#portModal']").on("click", function () {
 
@@ -98,9 +106,7 @@ $(document).ready(function() {
 
 	});
 
-	$('.grid').masonry({
-		itemSelector: '.grid-item'
-	});
+
 
 	// Cases slider
 
@@ -122,6 +128,23 @@ $(document).ready(function() {
 	});
 
 	// Cases slider END
+
+	$(".port-slider").slick({
+		slidesToShow: 3,
+		slidesToScroll: 3,
+		speed: 1000,
+		infinite: false,
+		rows: 0,
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2
+				}
+			}
+		]
+	});
 
 	// Close modal
 
@@ -1860,7 +1883,7 @@ $(function () {
         let list = '';
         let val_list = '';
         for(let idx in cart.data) {
-            let item = '<li><button type="button" title="Удалить из корзины" data-action="remove-from-cart" data-id="' + idx + '"></button>' + cart.data[idx] + '</li>';
+            let item = '<li><button type="button" title="Удалить из корзины" data-action="remove-from-cart" data-id="' + idx + '"></button>' + '<span>' + cart.data[idx] + '</span>' + '</li>';
             list += item;
             val_list += (idx + ': ' + cart.data[idx] + ';\n');
         }
@@ -1920,3 +1943,25 @@ $(function () {
         $('#port-product').val($(this).data('pack-product'));
     });
 });
+
+function makeUp() {
+
+	$("main").css({
+		paddingTop: $("header").outerHeight()
+	})
+
+	$(".section-top, .section-info").css({
+		minHeight: $(window).height() - $("header").outerHeight()
+	});
+
+	if ($(".port-slider .slick-arrow").length) {
+
+		$(".port-slider .slick-arrow").css({
+
+			top: $(".port-slider .slide:first-child .port-tmb-pic").height() / 2
+
+		});
+
+	}
+
+}

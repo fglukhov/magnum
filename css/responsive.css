@@ -561,4 +561,13 @@ body {
     right: 0; }
   .port-tmb-pic:after {
     transform: scale(0.4);
-    margin-left: -50px; } }
+    margin-left: -50px; }
+  .port-slider .slick-arrow {
+    bottom: auto;
+    top: 70px;
+    margin-top: -17px;
+    margin-bottom: 0; }
+  .port-slider .slick-prev {
+    left: -8px; }
+  .port-slider .slick-next {
+    right: -16px; } }
