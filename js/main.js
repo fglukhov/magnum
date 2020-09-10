@@ -56,6 +56,40 @@ $(document).ready(function() {
 
 	makeUp();
 
+	// GTM
+
+	$(".soclink[href*='facebook']").click(function () {
+
+		dataLayer.push({'event': 'clickfacebook'});
+
+	});
+
+	$(".soclink[href*='instagram']").click(function () {
+
+		dataLayer.push({'event': 'clickinstagram'});
+
+	});
+
+	$(".soclink[href*='youtube']").click(function () {
+
+		dataLayer.push({'event': 'clickyoutube'});
+
+	});
+
+	$("a[href*='mailto']").click(function () {
+
+		dataLayer.push({'event': 'clickemail'});
+
+	});
+
+	$("a[href*='youtube'][data-fancybox]").click(function () {
+
+		dataLayer.push({'event': 'clickvideo'});
+
+	});
+
+	// GTM END
+
 	$(".port-video").on("mouseover", function () {
 
 		$(this).css({
@@ -231,7 +265,7 @@ $(document).ready(function() {
 		if (!$(this).closest(".faq-item").hasClass("active")) {
 
 			var faqItemActive = $(".faq-item.active"),
-					faqItemCur = $(this).closest(".faq-item");
+				faqItemCur = $(this).closest(".faq-item");
 
 			faqItemActive.removeClass("active");
 			faqItemActive.find(".faq-item-content").show().slideUp("250");
@@ -567,9 +601,9 @@ $(document).ready(function() {
 	$("body").on("click", ".ajax-link", function () {
 
 		var curLink = $(this),
-				curUrl = $(this).data("url"),
-				curTarget = $($(this).data("target")),
-				curSiblings = $(this).closest(".ajax-links").find(".ajax-link");
+			curUrl = $(this).data("url"),
+			curTarget = $($(this).data("target")),
+			curSiblings = $(this).closest(".ajax-links").find(".ajax-link");
 
 		curTarget.addClass("loading");
 
@@ -805,26 +839,26 @@ $(document).ready(function() {
 	// Show more
 
 	$("body").on("click", ".more-link", function () {
-	    var moreLink = $(this),
-	        moreUrl = $(this).attr("href");
-	    if (!moreLink.hasClass("loading")) {
-	        moreLink.addClass("loading");
-	        $.ajax({
-	            url: moreUrl,
-	            dataType: "html"
-	        }).done(function(data) {
-	            moreLink.closest(".more-link-wrapper").before($(data));
-	            moreLink.closest(".more-link-wrapper").remove();
+		var moreLink = $(this),
+			moreUrl = $(this).attr("href");
+		if (!moreLink.hasClass("loading")) {
+			moreLink.addClass("loading");
+			$.ajax({
+				url: moreUrl,
+				dataType: "html"
+			}).done(function(data) {
+				moreLink.closest(".more-link-wrapper").before($(data));
+				moreLink.closest(".more-link-wrapper").remove();
 
-	            if ($(".more-link").closest(".projects-list").length) {
+				if ($(".more-link").closest(".projects-list").length) {
 
-								$(".more-link").closest(".projects-list").find(".project-tmb").css("opacity", "1");
+					$(".more-link").closest(".projects-list").find(".project-tmb").css("opacity", "1");
 
-							}
+				}
 
-	        });
-	    }
-	    return false;
+			});
+		}
+		return false;
 	});
 
 	// Show more END
@@ -1281,7 +1315,7 @@ function childSelects() {
 	$("select[data-parent]").each(function () {
 
 		var childSelect = $(this),
-				parentSelect = $($(this).data("parent"));
+			parentSelect = $($(this).data("parent"));
 
 
 		var childContainer = childSelect.closest(".child-select-container");
@@ -1312,15 +1346,15 @@ function castFilter(castOverWrapper) {
 	console.log(castOverWrapper)
 
 	var castFilter = castOverWrapper.find(".cast-filter"),
-			castItems = castOverWrapper.find(".cast-col"),
-			curLink = castFilter.find(".active"),
-			curDate = curLink.data("date");
+		castItems = castOverWrapper.find(".cast-col"),
+		curLink = castFilter.find(".active"),
+		curDate = curLink.data("date");
 
 
 	castItems.each(function () {
 
 		var datesArr = $(this).data("dates"),
-				curItem = $(this);
+			curItem = $(this);
 
 
 		if (datesArr.indexOf(curDate) >= 0 || curDate == "all") {
@@ -1340,9 +1374,9 @@ function castFilter(castOverWrapper) {
 function stickyBlocks() {
 
 	var stickyPic = $(".sticky-pic"),
-			stickyStart = $(".sticky-start"),
-			stickyStop = $(".sticky-stop"),
-			topOffset = 30;
+		stickyStart = $(".sticky-start"),
+		stickyStop = $(".sticky-stop"),
+		topOffset = 30;
 
 	if (stickyPic.length) {
 
@@ -1379,7 +1413,7 @@ function stickyBlocks() {
 		});
 
 	}
-	
+
 
 	var stickyElements = $(".sticky-block"),
 		topOffset = 30,
@@ -1827,131 +1861,141 @@ function posHeaderCart() {
 
 // Cart
 $(function () {
-    let Cart = function () {
-        this.data = getData();
-        
-        this.add = function (item) {
-            if (this.data[item.id]) {
-                return;
-            } else {
-                this.data[item.id] = item.title;
-                this.save();
-            }
-        };
-        this.remove = function (item) {
-            delete(this.data[item]);
-            this.save();
-        }
-        this.save = function () {
-            sessionStorage.setItem('cart', JSON.stringify(this.data));
-            this.onSave();
-        };
-        this.clear = function () {
-            this.data = {};
-            this.save();
-        };
-        this.count = function () {
-            return Object.keys(this.data).length;
-        };
-        this.onSave = function() {};
-        this.onInit = function() {};
-        
-        function getData () {
-            const data = sessionStorage.getItem('cart');
-            if (data && Object.keys(data).length) {
-                return JSON.parse(data);
-            }
-            return {};
-        };
-    }
-    let cart = new Cart();
-    cart.onSave = function() {
-        updateOrderList();
-        if (cart.count()) {
-            $('.header-cart').addClass('show');
-        } else {
-            $('.header-cart').removeClass('show');
-        }
-    };
-    updateOrderList();
-    
-    if (cart.count()) {
-        $('.header-cart').addClass('show');
-    }
-    
-    function updateOrderList () {
-        let list = '';
-        let val_list = '';
-        for(let idx in cart.data) {
-            let item = '<li><button type="button" title="Удалить из корзины" data-action="remove-from-cart" data-id="' + idx + '"></button>' + '<span>' + cart.data[idx] + '</span>' + '</li>';
-            list += item;
-            val_list += (idx + ': ' + cart.data[idx] + ';\n');
-        }
-        $('#cartModalList, .header-cart-list').html(list);
-        $('#cart_modal_product').val(val_list);
-    }
+	let Cart = function () {
+		this.data = getData();
 
-    $('[data-action="add-to-cart"]').click(function () {
-        let $item = $(this);
-        let data = {};
-        data.id = $item.data('id');
-        data.title = $item.closest('.service-tmb-descr').find('h3').text();
-        cart.add(data);
-        
-        showOrderPopup();
-    });
-    $(document).on('click', '[data-action="remove-from-cart"]', function () {
-       cart.remove($(this).data('id'));
-    });
-    
-    $('#cartForm').submit(function (e) {
-        cart.clear();
-    });
-    
-    const showOrderPopup = debounce(function () {
-            $('.header-cart-popup').fadeToggle(350);
-            setTimeout(function() { $('.header-cart-popup').fadeToggle(350); }, 3000);
-        },
-        3000,
-        1
-    );
-    
-    function debounce(func, wait, immediate) {
-      let timeout;
-    
-      return function executedFunction() {
-        const context = this;
-        const args = arguments;
-    
-        const later = function() {
-          timeout = null;
-          if (!immediate) func.apply(context, args);
-        };
-    
-        const callNow = immediate && !timeout;
-    
-        clearTimeout(timeout);
-    
-        timeout = setTimeout(later, wait);
-    
-        if (callNow) func.apply(context, args);
-      };
-    };
-    
-    // Pack
-    $('[data-pack-product]').click(function() {
-        $('#port-product').val($(this).data('pack-product'));
-    });
+		this.add = function (item) {
+			if (this.data[item.id]) {
+				return;
+			} else {
+				this.data[item.id] = item.title;
+				this.save();
+			}
+		};
+		this.remove = function (item) {
+			delete(this.data[item]);
+			this.save();
+		}
+		this.save = function () {
+			sessionStorage.setItem('cart', JSON.stringify(this.data));
+			this.onSave();
+		};
+		this.clear = function () {
+			this.data = {};
+			this.save();
+		};
+		this.count = function () {
+			return Object.keys(this.data).length;
+		};
+		this.onSave = function() {};
+		this.onInit = function() {};
+
+		function getData () {
+			const data = sessionStorage.getItem('cart');
+			if (data && Object.keys(data).length) {
+				return JSON.parse(data);
+			}
+			return {};
+		};
+	}
+	let cart = new Cart();
+	cart.onSave = function() {
+		updateOrderList();
+		if (cart.count()) {
+			$('.header-cart').addClass('show');
+		} else {
+			$('.header-cart').removeClass('show');
+		}
+	};
+	updateOrderList();
+
+	if (cart.count()) {
+		$('.header-cart').addClass('show');
+	}
+
+	function updateOrderList () {
+		let list = '';
+		let val_list = '';
+		for(let idx in cart.data) {
+			let item = '<li><button type="button" title="Удалить из корзины" data-action="remove-from-cart" data-id="' + idx + '"></button>' + '<span>' + cart.data[idx] + '</span>' + '</li>';
+			list += item;
+			val_list += (idx + ': ' + cart.data[idx] + ';\n');
+		}
+		$('#cartModalList, .header-cart-list').html(list);
+		$('#cart_modal_product').val(val_list);
+	}
+
+	$('[data-action="add-to-cart"]').click(function () {
+		let $item = $(this);
+		let data = {};
+		data.id = $item.data('id');
+		data.title = $item.closest('.service-tmb-descr').find('h3').text();
+		cart.add(data);
+
+		showOrderPopup();
+	});
+	$(document).on('click', '[data-action="remove-from-cart"]', function () {
+		cart.remove($(this).data('id'));
+	});
+
+	$('#cartForm').submit(function (e) {
+		cart.clear();
+	});
+
+	const showOrderPopup = debounce(function () {
+			$('.header-cart-popup').fadeToggle(350);
+			setTimeout(function() { $('.header-cart-popup').fadeToggle(350); }, 3000);
+		},
+		3000,
+		1
+	);
+
+	function debounce(func, wait, immediate) {
+		let timeout;
+
+		return function executedFunction() {
+			const context = this;
+			const args = arguments;
+
+			const later = function() {
+				timeout = null;
+				if (!immediate) func.apply(context, args);
+			};
+
+			const callNow = immediate && !timeout;
+
+			clearTimeout(timeout);
+
+			timeout = setTimeout(later, wait);
+
+			if (callNow) func.apply(context, args);
+		};
+	};
+
+	// Pack
+	$('[data-pack-product]').click(function() {
+		$('#port-product').val($(this).data('pack-product'));
+	});
 });
 
 function makeUp() {
 
+	if ($("#mobile-indicator").css("display") == "block") {
+
+		var hHeight = 57;
+
+	} else {
+
+		hHeight = $("header").outerHeight();
+
+	}
+
 	$("main").css({
-		paddingTop: $("header").outerHeight()
+		paddingTop: hHeight
 	})
 
 	$(".section-top, .section-info").css({
-		minHeight: $(window).height() - $("header").outerHeight()
+		minHeight: $(window).height() - hHeight
 	});
 
 	if ($(".port-slider .slick-arrow").length) {
