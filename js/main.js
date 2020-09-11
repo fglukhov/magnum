@@ -1995,7 +1995,7 @@ function makeUp() {
 	})
 
 	$(".section-top, .section-info").css({
-		minHeight: $(window).height() - hHeight
+		minHeight: window.innerHeight - hHeight
 	});
 
 	if ($(".port-slider .slick-arrow").length) {
