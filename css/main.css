@@ -1511,7 +1511,8 @@ header {
   position: absolute;
   left: 50%;
   top: 50%;
-  margin: -67px 0 0 -47px; }
+  margin: -67px 0 0 -47px;
+  pointer-events: none; }
 
 .port-tmb-pic a {
   position: relative;
@@ -2124,3 +2125,7 @@ ul.header-cart-list > li {
   text-align: center;
   margin: 0 auto;
   margin-bottom: 70px; }
+
+#portModal h2,
+#portModal .h2 {
+  text-align: center; }
